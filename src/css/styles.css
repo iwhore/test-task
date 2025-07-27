@@ -30,9 +30,19 @@ a {
 }
 
 .container {
-    display: flex;
     max-width: 1500px;
     padding: 0px 30px;
+}
+
+h2{
+    font-family: Raleway;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 25px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: capitalize;
+    color:  #525369;
 }
 
 /*HEADER */
@@ -167,4 +177,305 @@ header{
     height: 225px;
     border-radius: 30px;
     box-shadow: 2px 2px 4px 0px #8184AF1A;
+}
+
+
+/*list location */
+.location-list {
+    max-width: 1500px;
+    margin-top: 15px;
+}
+.location-list__header{
+    display: flex;
+    align-items: center;
+    gap: 20px; 
+    padding: 15px 30px;
+    border-top: 1px solid #8184AF4D;
+    border-bottom: 1px solid #8184AF4D;
+    margin-bottom: -1px;
+    
+}
+
+.location-list__count{
+    padding-top: 4px;
+    text-align: center;
+    background-color: #8184AF33;
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    color: #52536980;
+    font-family: Raleway;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 15px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.location-list__header-cell{
+    font-family: Raleway;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 22px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: capitalize;
+    color: #525369;
+}
+
+.location-list__row{
+    width: 100%;
+    border: 1px solid #04040700
+}
+
+
+.location-list__table {
+    width: 100%;
+    border-collapse: collapse; 
+}
+
+.location-list__cell,
+.location-list__header-cell {
+    padding: 0;
+    margin: 0;  
+}
+
+.location-list__header-cell {
+    padding: 10px 15px;
+    text-align: left;
+    border: 1px solid #8184AF26;
+    border-collapse: collapse;
+}
+
+.location-list__cell {
+    padding: 10px 15px;
+    font-family: Raleway;
+    font-weight: 400;
+    font-style: Regular;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: capitalize;
+    font-size: 20px;
+    border-bottom: 1px solid #8184AF26;
+}
+
+.location-list__cell--id,
+.location-list__header-cell--id{
+    padding-left: 30px;
+}
+
+.location-list__table {
+    width: auto + 10px;
+}
+
+.location-list__header-cell:last-child,
+.location-list__cell:last-child {
+    width: 400px;
+}
+
+.location-list__cell:last-child{
+    display: flex;
+    justify-content: space-between;
+}
+      
+.location-list__row {
+    display: table-row;
+}
+
+.location-list__icon {
+  width: 25px;
+  height: 25px;
+  margin-right: 20px;
+}
+
+/*ebay list */
+.ebay-listings {
+    max-width: 1500px;
+    margin-top: 20px;
+}
+.ebay-listings__header{
+    display: flex;
+    align-items: center;
+    gap: 20px; 
+    padding: 15px 30px;
+    border-top: 1px solid #8184AF4D;
+    border-bottom: 1px solid #8184AF4D;
+    margin-bottom: -1px;
+    
+}
+
+.ebay-listings__count{
+    padding-top: 4px;
+    text-align: center;
+    background-color: #8184AF33;
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    color: #52536980;
+    font-family: Raleway;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 15px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.ebay-listings__header-cell{
+    font-family: Raleway;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 22px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: capitalize;
+    color: #525369;
+}
+
+.ebay-listings__row{
+    width: 100%;
+    border: 1px solid #04040700
+}
+
+
+.ebay-listings__table {
+    width: 100%;
+    border-collapse: collapse; 
+}
+
+.ebay-listings__cell,
+.ebay-listings__header-cell {
+    padding: 0;
+    margin: 0;  
+}
+
+.ebay-listings__header-cell {
+    padding: 10px 15px;
+    text-align: left;
+    border: 1px solid #8184AF26;
+    border-collapse: collapse;
+}
+
+.ebay-listings__cell {
+    padding: 10px 15px;
+    font-family: Raleway;
+    font-weight: 400;
+    font-style: Regular;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: capitalize;
+    font-size: 20px;
+    border-bottom: 1px solid #8184AF26;
+}
+
+.ebay-listings__cell--id,
+.ebay-listings__header-cell--id{
+    padding-left: 30px;
+}
+
+/*same products */
+.same-products {
+    max-width: 1500px;
+    margin-top: 20px;
+}
+.same-products__header{
+    display: flex;
+    align-items: center;
+    gap: 20px; 
+    padding: 15px 30px;
+    border-top: 1px solid #8184AF4D;
+    border-bottom: 1px solid #8184AF4D;
+    margin-bottom: -1px;
+    
+}
+
+.same-products__count{
+    padding-top: 4px;
+    text-align: center;
+    background-color: #8184AF33;
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    color: #52536980;
+    font-family: Raleway;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 15px;
+    line-height: 100%;
+    letter-spacing: 0%;
+}
+
+.same-products__header-cell{
+    font-family: Raleway;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 22px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: capitalize;
+    color: #525369;
+}
+
+.same-products__row{
+    width: 100%;
+    border: 1px solid #04040700
+}
+
+
+.same-products__table {
+    width: 100%;
+    border-collapse: collapse; 
+}
+
+.same-products__cell,
+.same-products__header-cell {
+    padding: 0;
+    margin: 0;  
+}
+
+.same-products__header-cell {
+    padding: 10px 15px;
+    text-align: left;
+    border: 1px solid #8184AF26;
+    border-collapse: collapse;
+}
+
+.same-products__cell {
+    padding: 10px 15px;
+    font-family: Raleway;
+    font-weight: 400;
+    font-style: Regular;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: capitalize;
+    font-size: 20px;
+    border-bottom: 1px solid #8184AF26;
+}
+
+.same-products__header-cell--original,
+.same-products__cell--original{
+    padding-left: 30px;
+}
+
+.same-products__table {
+    width: auto + 10px;
+}
+
+.same-products__header-cell:last-child,
+.same-products__cell:last-child {
+    width: 1200px;
+}
+
+.same-products__cell:last-child{
+    display: flex;
+    justify-content: space-between;
+}
+      
+.same-products__row {
+    display: table-row;
+}
+
+.same-products__icon {
+  width: 25px;
+  height: 25px;
+  margin-right: 20px;
 }

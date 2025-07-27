@@ -88,7 +88,7 @@ export class ProductInfo {
 
   static async render(): Promise<HTMLElement> {
     const container = document.createElement('div');
-    container.className = 'product-info-container';
+    container.className = 'product-info-container container';
 
     try {
       const product = await this.loadProductData();

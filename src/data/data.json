@@ -25,7 +25,37 @@
   "photo_data_plate": "https://example.com/photo_data_plate.jpg",
   "location": [
     {
-      "id": "G112082",
+      "id": "G112082-01",
+      "brand": "NEC",
+      "category": "Projectors",
+      "device_pn": "CP34B",
+      "qty": 52,
+      "condition": "U/Ref",
+      "edit_user": "Script",
+      "notes": "No Lamp"
+    },
+    {
+      "id": "G112082-01",
+      "brand": "NEC",
+      "category": "Projectors",
+      "device_pn": "CP34B",
+      "qty": 52,
+      "condition": "U/Ref",
+      "edit_user": "Script",
+      "notes": "No Lamp"
+    },
+    {
+      "id": "G112082-01",
+      "brand": "NEC",
+      "category": "Projectors",
+      "device_pn": "CP34B",
+      "qty": 52,
+      "condition": "U/Ref",
+      "edit_user": "Script",
+      "notes": "No Lamp"
+    },
+    {
+      "id": "G112082-01",
       "brand": "NEC",
       "category": "Projectors",
       "device_pn": "CP34B",
@@ -37,6 +67,35 @@
   ],
   "ebay_listings": [
     {
+      "listing_id": "325064386872",
+      "sku": "SRO/P.Ne_ME33X...",
+      "condition_id": "UEG122535",
+      "product_id": "G122535",
+      "title": "3300 ANSI 3LCD Projector 1080p...",
+      "price": 114.27,
+      "listing_qty": 274,
+      "inventory_qty": 3376
+    },
+    {
+      "listing_id": "325064386872",
+      "sku": "SRO/P.Ne_ME33X...",
+      "condition_id": "UEG122535",
+      "product_id": "G122535",
+      "title": "3300 ANSI 3LCD Projector 1080p...",
+      "price": 114.27,
+      "listing_qty": 274,
+      "inventory_qty": 3376
+    },
+    {
+      "listing_id": "325064386872",
+      "sku": "SRO/P.Ne_ME33X...",
+      "condition_id": "UEG122535",
+      "product_id": "G122535",
+      "title": "3300 ANSI 3LCD Projector 1080p...",
+      "price": 114.27,
+      "listing_qty": 274,
+      "inventory_qty": 3376
+    },{
       "listing_id": "325064386872",
       "sku": "SRO/P.Ne_ME33X...",
       "condition_id": "UEG122535",

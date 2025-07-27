@@ -9,58 +9,77 @@ interface LocationItem {
   notes: string;
 }
 
-
 export class LocationList {
   static render(locationItems: LocationItem[]): HTMLElement {
     const section = document.createElement('section');
-    section.className = 'location-section';
+    section.className = 'location-list ';
+    
+    // Main container div
+    const container = document.createElement('div');
+    container.className = 'location-list__container';
 
-    // Заголовок секції з кількістю товарів
+    // Location header
+    const header = document.createElement('div');
+    header.className = 'location-list__header';
+    
     const heading = document.createElement('h2');
-    heading.className = 'section-title';
-    heading.textContent = `List Location (${locationItems.length})`;
-
-    // Створення таблиці
-    const table = document.createElement('table');
-    table.className = 'location-table';
-
-    // Заголовки таблиці
+    heading.className = 'location-list__title';
+    heading.textContent = `List Location`;
+    
+    const description = document.createElement('p');
+    description.className = 'location-list__count';
+    description.textContent = `${locationItems.length}`;
+    
+    header.appendChild(heading);
+    header.appendChild(description);
+    
+    // Table head
     const thead = document.createElement('thead');
+    thead.className = 'location-list__thead';
     thead.innerHTML = `
-      <tr>
-        <th>ID</th>
-        <th>Brand</th>
-        <th>Category</th>
-        <th>Device P/N</th>
-        <th>Qty</th>
-        <th>Condition</th>
-        <th>Edit User</th>
-        <th>Notes</th>
+      <tr class="location-list__row">
+        <th class="location-list__header-cell location-list__header-cell--id">ID</th>
+        <th class="location-list__header-cell location-list__header-cell--brand">Brand</th>
+        <th class="location-list__header-cell location-list__header-cell--category">Category</th>
+        <th class="location-list__header-cell location-list__header-cell--device-pn">Device P/N</th>
+        <th class="location-list__header-cell location-list__header-cell--qty">Qty</th>
+        <th class="location-list__header-cell location-list__header-cell--condition">Condition</th>
+        <th class="location-list__header-cell location-list__header-cell--edit-user">Edit User</th>
+        <th class="location-list__header-cell location-list__header-cell--notes">Notes</th>
       </tr>
     `;
-
-    // Тіло таблиці
+    
+    // Table body
     const tbody = document.createElement('tbody');
+    const imgUrl = 
+    tbody.className = 'location-list__tbody';
     locationItems.forEach(item => {
       const row = document.createElement('tr');
+      row.className = 'location-list__row';
       row.innerHTML = `
-        <td>${item.id}</td>
-        <td>${item.brand}</td>
-        <td>${item.category}</td>
-        <td>${item.device_pn}</td>
-        <td>${item.qty}</td>
-        <td>${item.condition}</td>
-        <td>${item.edit_user}</td>
-        <td>${item.notes || '-'}</td>
+        <td class="location-list__cell location-list__cell--id">${item.id}</td>
+        <td class="location-list__cell location-list__cell--brand">${item.brand}</td>
+        <td class="location-list__cell location-list__cell--category">${item.category}</td>
+        <td class="location-list__cell location-list__cell--device-pn">${item.device_pn}</td>
+        <td class="location-list__cell location-list__cell--qty">${item.qty}</td>
+        <td class="location-list__cell location-list__cell--condition">${item.condition}</td>
+        <td class="location-list__cell location-list__cell--edit-user">${item.edit_user}</td>
+        <td class="location-list__cell location-list__cell--notes">${item.notes || '-'}  <img class="location-list__icon" src="./img/png/circle-arrow.png" alt="Product" class="location-list__img"></td>
       `;
       tbody.appendChild(row);
     });
-
+    
+    // Table element
+    const table = document.createElement('table');
+    table.className = 'location-list__table';
     table.appendChild(thead);
     table.appendChild(tbody);
-    section.appendChild(heading);
-    section.appendChild(table);
-
+    
+    // Assemble the structure
+    container.appendChild(header);
+    container.appendChild(table);
+    section.appendChild(container);
+    
     return section;
   }
 }
