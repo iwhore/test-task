@@ -3,6 +3,7 @@ import { ProductInfo } from './components/productInfo';
 import { LocationList } from './components/locationList';
 import { EbayListings } from './components/ebayListings';
 import { SameProducts } from './components/sameProducts'
+import { Footer } from './components/footer'
 
 
 interface ProductData {
@@ -82,6 +83,7 @@ async function renderAllSections() {
         appContainer.appendChild(LocationList.render(productData.location));
         appContainer.appendChild(EbayListings.render(productData.ebay_listings));
         appContainer.appendChild(SameProducts.render(productData.same_products));
+       appContainer.appendChild(Footer.render());
     } catch (error) {
         handleError(error);
     }

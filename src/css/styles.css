@@ -479,3 +479,46 @@ header{
   height: 25px;
   margin-right: 20px;
 }
+
+/*footer */
+footer{
+    margin-top: 15px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.footer__expand-btn{
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    border-width: 1px;
+    border: 1px solid #8184AF;
+    background-color: transparent;
+    font-family: Raleway;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: capitalize;
+    color: #525369;
+}
+
+.footer__add-btn{
+    width: 80px;
+    height: 40px;
+    border-radius: 10px;
+    background-color:  #8184AF;
+    font-family: Raleway;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: capitalize;
+    color: #fff;
+    border: none;
+}
+
