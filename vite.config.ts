@@ -4,58 +4,52 @@ import injectHTML from 'vite-plugin-html-inject';
 import FullReload from 'vite-plugin-full-reload';
 import SortCss from 'postcss-sort-media-queries';
 
-interface RollupOutputOptions {
-  manualChunks?: (id: string) => string | void;
-  entryFileNames?: string | ((chunkInfo: { name: string }) => string);
-  assetFileNames?: string | ((assetInfo: { name?: string }) => string);
-}
-
-export default defineConfig(({ command }) => {
-  const plugins: PluginOption[] = [
-    injectHTML() as PluginOption,
-    FullReload(['./src/**/**.html']) as PluginOption,
-    SortCss({
-      sort: 'mobile-first',
-    }) as PluginOption,
-  ];
-
-  const rollupOptions: {
-    input: string[];
-    output: RollupOutputOptions;
-  } = {
-    input: glob.sync('./src/*.html'),
-    output: {
-      manualChunks(id: string) {
-        if (id.includes('node_modules')) {
-          return 'vendor';
-        }
-      },
-      entryFileNames: (chunkInfo: { name: string }) => {
-        if (chunkInfo.name === 'commonHelpers') {
-          return 'commonHelpers.js';
-        }
-        return '[name].js';
-      },
-      assetFileNames: (assetInfo: { name?: string }) => {
-        if (assetInfo.name && assetInfo.name.endsWith('.html')) {
-          return '[name].[ext]';
-        }
-        return 'assets/[name]-[hash][extname]';
-      },
-    },
-  };
-
+export default defineConfig(({ command, mode }) => {
+  const isProduction = mode === 'production';
+  
   return {
-    define: {
-      [command === 'serve' ? 'global' : '_global']: {},
-    },
+    // Вказуємо базовий шлях для продакшена
+    base: isProduction ? './' : '/',
+    
+    // Коренева папка проекту
     root: 'src',
+    
+    // Налаштування збірки
     build: {
-      sourcemap: true,
-      rollupOptions,
+      sourcemap: isProduction ? false : true, // Вимкнути sourcemap для продакшена
       outDir: '../dist',
       emptyOutDir: true,
+      rollupOptions: {
+        input: glob.sync('./src/*.html'),
+        output: {
+          assetFileNames: 'assets/[name]-[hash][extname]',
+          entryFileNames: 'assets/[name]-[hash].js',
+          chunkFileNames: 'assets/[name]-[hash].js',
+          manualChunks(id: string) {
+            if (id.includes('node_modules')) {
+              return 'vendor';
+            }
+          }
+        }
+      }
     },
-    plugins,
+    
+    // Плагіни
+    plugins: [
+      injectHTML(),
+      FullReload(['./src/**/**.html']),
+      SortCss({ sort: 'mobile-first' })
+    ],
+    
+    // Додаткові налаштування для Vercel
+    server: {
+      port: 3000,
+      strictPort: true
+    },
+    
+    // Оптимізація для продакшена
+    esbuild: {
+      drop: isProduction ? ['console', 'debugger'] : []
+    }
   };
 });
