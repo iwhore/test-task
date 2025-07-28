@@ -59,7 +59,7 @@ interface ProductData {
 }
 
 async function loadProductData(): Promise<ProductData> {
-  const response = await fetch('./data/data.json');
+  const response = await fetch('/data/data.json');
   if (!response.ok) throw new Error('Failed to load product data');
   return await response.json();
 }
